@@ -207,11 +207,11 @@ if(!String.prototype.format) {
         if(window.calendar_languages && (lang in window.calendar_languages)) {
             this.strings = $.extend(true, {}, strings, calendar_languages[lang]);
             this.options.language = lang;
+            this.options.first_day = this.strings.first_day || this.options.first_day;
         } else {
             this.strings = strings;
             delete this.options.language;
         }
-        this.options.first_day = this.strings.first_day || this.options.first_day;
     }
 
     Calendar.prototype._render = function() {
