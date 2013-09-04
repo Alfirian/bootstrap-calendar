@@ -210,6 +210,7 @@ if(!String.prototype.format) {
             this.strings = strings;
             delete this.options.language;
         }
+        this.options.first_day = this.strings.first_day || 1;
     }
 
     Calendar.prototype._render = function() {

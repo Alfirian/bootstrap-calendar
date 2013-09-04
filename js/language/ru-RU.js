@@ -49,5 +49,6 @@ window.calendar_languages['ru-RU'] = {
 	d6: 'Суббота',
 
 	easter: 'Пасха',
-	easterMonday: 'Пасхальный понедельник'
+	easterMonday: 'Пасхальный понедельник',
+    first_day: 1
 };
