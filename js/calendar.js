@@ -185,8 +185,9 @@ if(!String.prototype.format) {
 
     function Calendar(params, context) {
 
-        this.options = $.extend(true, {}, defaults, params);
-        this.setLanguage(this.options.language);
+        this.options = {}
+        this.setLanguage(params.language);
+        this.options  = $.extend(true, this.options, defaults, params);
         this.context = context;
 
         context.css('width', this.options.width);
@@ -210,7 +211,7 @@ if(!String.prototype.format) {
             this.strings = strings;
             delete this.options.language;
         }
-        this.options.first_day = this.strings.first_day || 1;
+        this.options.first_day = this.strings.first_day || this.options.first_day;
     }
 
     Calendar.prototype._render = function() {
